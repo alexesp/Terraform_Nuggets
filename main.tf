@@ -16,7 +16,15 @@ resource "aws_vpc" "vpc-east" {
   cidr_block = "10.5.0.0/16"
 
   tags = {
-    Name="main"
+    Name="tf-vpc-east"
+  }
+}
+
+resource "aws_internet_gateway" "gw-east" {
+  #vpc_id = aws_vpc.vpc-east
+  
+   tags = {
+    Name="gw-east"
   }
 }
 # resource "aws_instance" "example" {
