@@ -1,12 +1,12 @@
-resource "aws_internet_gateway" "gw-south" {
-  #vpc_id = aws_vpc.vpc-east
+resource "aws_internet_gateway" "igw-south" {
+  vpc_id = aws_vpc.vpc-south.id
   
    tags = {
-    Name="gw-south"
+    Name="igw-south"
   }
 }
 
-resource "aws_internet_gateway_attachment" "gw-south-attach" {
-    internet_gateway_id = aws_internet_gateway.gw-south.id
+resource "aws_internet_gateway_attachment" "igw-south-attach" {
+    internet_gateway_id = aws_internet_gateway.igw-south.id
     vpc_id = aws_vpc.vpc-south.id
 }
