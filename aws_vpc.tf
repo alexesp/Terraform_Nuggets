@@ -6,3 +6,7 @@ resource "aws_vpc" "vpc-south" {
     Name="tf-vpc-south"
   }
 }
+
+# resource "aws_default_vpc" "default" {
+#   force_destroy = true
+# }
