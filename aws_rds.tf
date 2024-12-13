@@ -15,5 +15,6 @@ resource "aws_db_instance" "rdsdb-suth2" {
     password = "aDMIn_321"
     skip_final_snapshot = true
     db_subnet_group_name = aws_db_subnet_group.subnet_group_db_south2.name
+    publicly_accessible = true
 }
  
